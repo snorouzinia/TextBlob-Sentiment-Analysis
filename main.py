@@ -1,5 +1,5 @@
 from textblob import TextBlob
-def analyze(text) -> dict:
+def analyze(text) -> dict: #input checks are conducted here
     #input check
     if not isinstance(text, str):
         raise TypeError("Input must be a string")
@@ -36,7 +36,7 @@ def analyze_sentiment(sentiment):
 
     return polarity, subjectivity
 
-TEST_SENTENCES = [
+TEST_SENTENCES = [ #these are the 12 sentences, 4 positive, 4 negative, and 4 neutral
     #positives
     ("I love computer science it makes me so happy!", "Positive"),
     ("Today I ate a good meal for lunch.", "Positive"),
@@ -56,7 +56,7 @@ TEST_SENTENCES = [
     ("Paper is made from trees.", "Neutral")
 ]
 
-def tests(test_sentences):
+def tests(test_sentences): #here, the 12 questions are tested
     results = []
     correct = 0
 
@@ -86,7 +86,7 @@ def analyze_incorrect(incorrect_sentences):
         print(f"result: {result}, expected: {expected}")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": #main entry point here
     results = tests(TEST_SENTENCES)
 
     print("Analyzing 2 incorrect or uncertain predictions...")
